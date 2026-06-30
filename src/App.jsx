@@ -12,7 +12,7 @@ function App() {
       JSON.parse(localStorage.getItem('items')) || [];
     setItems(storedItems);
   }, []);
-
+//
   useEffect(() => {
     localStorage.setItem('items', JSON.stringify(items));
   }, [items]);
