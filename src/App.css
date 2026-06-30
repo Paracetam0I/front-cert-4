@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap');
+
 :root{
     --color-fondo-claro: aliceblue;
     --color-rosa-suave: #e0ecfa;
@@ -54,6 +56,8 @@ h1 {
   margin-bottom: 25px;
   color: var(--color-rosa-principal);
   font-size: 30px;
+  font-family: "Bitcount Single", system-ui;
+  font-optical-sizing: auto;
 }
 
 form {
