@@ -1,25 +1,27 @@
 :root{
     --color-fondo-claro: aliceblue;
-    --color-rosa-suave: #fae8e0;
-    --color-rosa-principal: #ef7c8e;
-    --color-malva: #a36b76;
-    --color-verde: #38761D;
+    --color-rosa-suave: #e0ecfa;
+    --color-rosa-principal: #7cefef;
+    --color-malva: #9c6ba3;
+    --color-verde: #1d766f;
     --color-texto-secundario: #7d5560;
     --color-blanco: #ffffff;
     --color-azul: #2f6f9f;
-    --color-naranjo: #c46a1b;
+    --color-naranjo: #1b8fc4;
     --color-rojo: #b63838;
+    --color-celeste: #a0d6f0;       /* celeste claro */
+    --color-azul-oscuro: #1a3a5c;   /* azul oscuro */
 
     /* Hover */
-    --color-rosa-hover: #d86c7d;
-    --color-verde-hover: #2c5c16;
-    --color-rojo-hover: #8f2c2c;
+    --color-rosa-hover: #163a5c;
+    --color-verde-hover: #163a5c;
+    --color-rojo-hover: #8f2c4a;
 
     /* Bordes y sombras */
     --color-borde: #cdbfc3;
     --color-sombra: rgba(0, 0, 0, 0.15);
     --color-sombra-item: rgba(0, 0, 0, 0.08);
-    --color-focus: rgba(239, 124, 142, 0.25);
+    --color-focus: rgba(159, 89, 224, 0.25);
 }
 
 * {
@@ -27,18 +29,15 @@
 }
 
 body {
-  margin: 0;
-  min-height: 100vh;
-  font-family: Arial, Helvetica, sans-serif;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: linear-gradient(
-    135deg,
-    var(--color-verde),
-    var(--color-blanco),
-    var(--color-rosa-principal)
-  );
+  background-color: var(--color-celeste);
+  background-image: 
+    linear-gradient(45deg, var(--color-azul-oscuro) 25%, transparent 25%),
+    linear-gradient(-45deg, var(--color-azul-oscuro) 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, var(--color-azul-oscuro) 75%),
+    linear-gradient(-45deg, transparent 75%, var(--color-azul-oscuro) 75%);
+  background-size: 40px 40px;
+  background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+  /* Sin color de fondo sólido (transparente) para ver solo líneas */
 }
 
 .App {
