@@ -114,22 +114,18 @@ li {
   border-radius: 14px;
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 8px;
   color: var(--color-malva);
   font-size: 16px;
   box-shadow: 0 4px 10px var(--color-sombra-item);
 }
 
-li button:first-of-type {
-  background-color: var(--color-verde);
-  color: var(--color-blanco);
-  margin-left: auto;
+.item-value {
+  flex: 1;                     /* Ocupa el espacio sobrante */
+  word-break: break-word;
 }
 
-li button:first-of-type:hover {
-  background-color: var(--color-verde-hover);
-}
 
 li button:last-of-type {
   background-color: var(--color-rojo);
@@ -138,6 +134,12 @@ li button:last-of-type {
 
 li button:last-of-type:hover {
   background-color: var(--color-rojo-hover);
+}
+
+li input[type="checkbox"] {
+  margin: 0;  
+  padding: 0;        /* Elimina el margen que lo desplaza */
+  flex-shrink: 0;     /* Evita que se encoja */
 }
 
 @media (max-width: 480px) {
@@ -157,4 +159,31 @@ li button:last-of-type:hover {
   li button:first-of-type {
     margin-left: 0;
   }
+}
+
+.completed .item-value {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.search-input {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  width: 100%;
+  max-width: 400px;
+  display: block;
+}
+
+.delete-all-btn {
+  margin: 0.5rem 0;
+  padding: 0.4rem 1rem;
+  background-color: var(--color-rojo);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.delete-all-btn:hover {
+  background-color: var(--color-rojo);
 }

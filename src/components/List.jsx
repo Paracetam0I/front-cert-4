@@ -1,16 +1,23 @@
 import React from 'react';
-import Item from './Item';
 
-function List({ items, deleteItem, editItem }) {
+function List({ items, deleteItem, editItem, toggleComplete }) {
+  if (items.length === 0) {
+    return <p>No hay elementos.</p>;
+  }
+
   return (
-    <ul>
-      {items.map((item) => (
-        <Item
-          key={item.id}
-          item={item}
-          deleteItem={deleteItem}
-          editItem={editItem}
-        />
+    <ul className="list">
+      {items.map(item => (
+        <li key={item.id} className={item.completed ? 'completed' : ''}>
+          <input
+            type="checkbox"
+            checked={item.completed}
+            onChange={() => toggleComplete(item.id)}
+          />
+          <span className="item-value">{item.value}</span>
+          <button onClick={() => editItem(item)}>Editar</button>
+          <button onClick={() => deleteItem(item.id)}>Eliminar</button>
+        </li>
       ))}
     </ul>
   );
